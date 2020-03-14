@@ -1,38 +1,143 @@
+html,
+body,
+#root,
 .App {
-  text-align: center;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App, #root {
+  min-height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header, .App-footer {
+  background-color: #003bb1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  color: white;
+  padding: 12px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
+  justify-content: flex-start;
+}
+
+.App-body {
+  flex-grow: 1;
+  padding: 24px;
+}
+
+.App-footer {
+  font-size: calc(6px + 1vmin);
+  justify-content: flex-end;
+}
+
+.App-footer div {
+  padding: 0px 12px;
+}
+
+.updated {
+  flex-grow: 1;
+  text-align: right;
+}
+
+button {
   color: white;
+  border: none;
+  background-color: unset;
+  font-size: inherit;
+  text-decoration: inherit;
 }
 
-.App-link {
-  color: #61dafb;
+.upload, .load, button {
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal {
+  position: absolute;
+  background-color: rgba(0,0,0,0.25);
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+}
+
+.modal .content {
+  background-color: #003bb1;
+  color: white;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding: 24px;
+  border-radius: 6px;
+}
+
+.modal button {
+  margin-left: 24px;
+  font-size: 2vmin;
+  vertical-align: bottom;
+}
+
+.modal .close {
+  float: right;
+  font-size: 4vmin;
+  cursor: pointer;
+  color: lightgray;
+  margin: -12px 0px;
+  text-decoration: none;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: white solid 2px;
+  background: none;
+  color: white;
+  font-size: 2vmin;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 8px;
+}
+
+th.gain, td.gain {
+  background-color: lightgreen;
+}
+
+th span, td span {
+  float: right;
+  text-align: right;
+  padding-left: 8px;
+}
+
+th.gain span, td.gain span {
+  color: green;
+}
+
+th.loss, td.loss {
+  background-color: lightcoral;
+}
+
+th.loss span, td.loss span {
+  color: red;
+}
+
+.reports {
+  padding: 6px;
+}
+
+.reports button {
+  background-color: #003bb1;
+  padding: 6px;
+  border-radius: 4px;
+  margin-left: 12px;
 }
